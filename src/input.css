@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@theme {
+  --color-background-secondary: #F5F5F5;
+}
