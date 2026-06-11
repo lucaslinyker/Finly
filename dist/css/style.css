@@ -185,6 +185,12 @@
   .right-1\/2 {
     right: calc(1 / 2 * 100%);
   }
+  .bottom-1\/2 {
+    bottom: calc(1 / 2 * 100%);
+  }
+  .left-1\/2 {
+    left: calc(1 / 2 * 100%);
+  }
   .contents {
     display: contents;
   }
@@ -199,6 +205,11 @@
   }
   .w-full {
     width: 100%;
+  }
+  .-translate-1\/2 {
+    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
+    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-1\/2 {
     --tw-translate-x: calc(1 / 2 * 100%);
