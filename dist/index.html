@@ -1,96 +1,218 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finly - Liberdade financeira na palma da sua mão">
     <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="alternate icon" href="images/logo.png" type="image/png">
-    <title>Finly</title>
+    <title>Finly - Gestão Financeira Inteligente</title>
     <script src="https://kit.fontawesome.com/f567caf46e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <header class="relative bg-white shadow-2xl flex items-center justify-between p-10">
-        <h1 class="font-bold text-5xl">Finly</h1>
+<body class="bg-white dark:bg-zinc-950">
+    <header class="sticky top-0 z-40 bg-white dark:bg-zinc-900 shadow-md">
+        <nav class="flex items-center justify-between p-4 sm:p-6 lg:p-10 max-w-7xl mx-auto">
+            <h1 class="font-bold text-3xl sm:text-5xl text-zinc-900 dark:text-white">Finly</h1>
 
-        <button
-            type="button"
-            id="menu-btn"
-            class="lg:hidden text-2xl"
-        >
-            <i class="fa-solid fa-bars"></i>
-        </button>
+            <div class="flex items-center gap-4">
+                <!-- Menu Toggle Button -->
+                <button
+                    id="menu-btn"
+                    type="button"
+                    class="lg:hidden text-2xl text-zinc-900 dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+                    aria-label="Abrir menu de navegação"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
 
-        <menu class="hidden lg:block">
-            <ul class="flex items-center gap-4">
-                <div class="flex gap-2">
-                    <li><a href="#" class="transition-colors hover:bg-zinc-100 rounded-lg p-2">Home</a></li>
-                    <li><a href="#" class="transition-colors hover:bg-zinc-100 rounded-lg p-2">Sobre</a></li>
-                    <li><a href="#" class="transition-colors hover:bg-zinc-100 rounded-lg p-2">Blog</a></li>
-                    <li><a href="#" class="transition-colors hover:bg-zinc-100 rounded-lg p-2">Preços</a></li>
-                    <li><a href="#" class="transition-colors hover:bg-zinc-100 rounded-lg p-2">Trabalhe conosco</a></li>
-                </div>
+                <!-- Desktop Menu -->
+                <menu class="hidden lg:flex items-center gap-8">
+                    <ul class="flex gap-4">
+                        <li>
+                            <a href="#home" class="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                                Sobre
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#blog" class="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pricing" class="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                                Preços
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#careers" class="text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors">
+                                Trabalhe conosco
+                            </a>
+                        </li>
+                    </ul>
 
-                <div class="flex gap-2">
-                    <li><a href="#" class="transition-colors bg-zinc-800 hover:bg-zinc-900 text-white rounded-lg px-7 py-2">Entrar</a></li>
-                    <li><a href="#" class="transition-colors bg-zinc-200 hover:bg-zinc-300 border border-zinc-500 hover:border-zinc-800 rounded-lg px-7 py-2">Criar conta</a></li>
-                </div>
-            </ul>
-        </menu>
+                    <ul class="flex gap-3 border-l border-zinc-200 dark:border-zinc-700 pl-8">
+                        <li>
+                            <a href="#login" class="px-6 py-2 text-white bg-zinc-800 dark:bg-zinc-700 hover:bg-zinc-900 dark:hover:bg-zinc-600 rounded-lg transition-colors">
+                                Entrar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#signup" class="px-6 py-2 text-zinc-900 dark:text-white border border-zinc-300 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+                                Criar conta
+                            </a>
+                        </li>
+                    </ul>
+                </menu>
+            </div>
+        </nav>
 
+        <!-- Mobile Menu -->
         <menu
             id="mobile-menu"
-            class="hidden absolute top-full left-0 z-50 w-full bg-white shadow-lg lg:hidden"
+            class="hidden lg:hidden bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 shadow-lg"
+            aria-label="Menu de navegação mobile"
         >
-            <ul class="flex flex-col gap-4 p-4">
-                <li><a class="block text-center" href="#">Home</a></li>
-                <li><a class="block text-center" href="#">Sobre</a></li>
-                <li><a class="block text-center" href="#">Blog</a></li>
-                <li><a class="block text-center" href="#">Preços</a></li>
-                <li><a class="block text-center" href="#">Trabalhe conosco</a></li>
-                <li><a class="block text-center" href="#">Entrar</a></li>
-                <li><a class="block text-center" href="#">Criar conta</a></li>
+            <ul class="flex flex-col gap-2 p-4 space-y-2">
+                <li>
+                    <a href="#home" class="block px-4 py-2 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#about" class="block px-4 py-2 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+                        Sobre
+                    </a>
+                </li>
+                <li>
+                    <a href="#blog" class="block px-4 py-2 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="#pricing" class="block px-4 py-2 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+                        Preços
+                    </a>
+                </li>
+                <li>
+                    <a href="#careers" class="block px-4 py-2 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+                        Trabalhe conosco
+                    </a>
+                </li>
+                <hr class="my-2 border-zinc-200 dark:border-zinc-700">
+                <li>
+                    <a href="#login" class="block px-4 py-2 text-center text-white bg-zinc-800 dark:bg-zinc-700 hover:bg-zinc-900 dark:hover:bg-zinc-600 rounded-lg transition-colors">
+                        Entrar
+                    </a>
+                </li>
+                <li>
+                    <a href="#signup" class="block px-4 py-2 text-center text-zinc-900 dark:text-white border border-zinc-300 dark:border-zinc-600 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+                        Criar conta
+                    </a>
+                </li>
             </ul>
         </menu>
     </header>
 
     <main>
-        <section class="relative">
-            <img class="h-132.5 w-full object-cover brightness-90" src="images/landscape.jpg" alt="Imagem">
-            <span class="w-10/12 absolute top-1/2 left-1/2 -translate-1/2 text-white text-center text-4xl font-bold">Explore o mundo enquanto cuidamos da sua vida financeira</span>
+        <!-- Hero Section -->
+        <section id="home" class="relative h-96 sm:h-112 overflow-hidden">
+            <img
+                class="w-full h-full object-cover brightness-75"
+                src="images/landscape.jpg"
+                alt="Mulher em montanha olhando para o horizonte"
+                loading="lazy"
+            >
+            <div class="absolute inset-0 flex items-center justify-center bg-black/20">
+                <h2 class="text-white text-center text-2xl sm:text-4xl lg:text-5xl font-bold px-4 max-w-2xl drop-shadow-lg">
+                    Explore o mundo enquanto cuidamos da sua vida financeira
+                </h2>
+            </div>
         </section>
 
-        <section class="flex flex-col lg:flex-row items-center justify-around text-center">
-            <img src="images/finance-man.png" alt="Homem de finanças">
-            <p class="text-4xl font-bold px-7 my-4">A liberdade financeira que você sempre sonhou na palma da sua mão</p>
+        <!-- Features Section -->
+        <section id="about" class="py-16 sm:py-24 px-4 max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                <img
+                    src="images/finance-man.png"
+                    alt="Profissional de finanças"
+                    class="w-full lg:w-1/2 rounded-lg shadow-lg"
+                    loading="lazy"
+                >
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
+                        A liberdade financeira que você sempre sonhou
+                    </h3>
+                    <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        Na palma da sua mão, controle total sobre suas finanças com segurança e simplicidade.
+                    </p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer class="bg-background-secondary flex items-center justify-between flex-wrap px-4 py-8">
-        <p class="w-full sm:w-auto text-center">@ 2026 Finly, Inc. Todos os direitos reservados.</p>
+    <footer class="bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 py-8 sm:py-12">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                <p class="text-center sm:text-left text-zinc-600 dark:text-zinc-400">
+                    © 2026 Finly, Inc. Todos os direitos reservados.
+                </p>
 
-        <ul class="w-full sm:w-auto flex gap-4 justify-evenly mt-3 sm:mt-0">
-            <li>
-                <a href="http://youtube.com" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-youtube fa-xl"></i>
-                </a>
-            </li>
-            <li>
-                <a href="http://instagram.com" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-instagram fa-xl"></i>
-                </a>
-            </li>
-            <li>
-                <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-linkedin-in fa-xl"></i>
-                </a>
-            </li>
-            <li>
-                <a href="http://x.com" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-x-twitter fa-xl"></i>
-                </a>
-            </li>
-        </ul>
+                <ul class="flex gap-6" role="list">
+                    <li>
+                        <a
+                            href="https://youtube.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                        >
+                            <i class="fa-brands fa-youtube fa-lg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://instagram.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                        >
+                            <i class="fa-brands fa-instagram fa-lg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://linkedin.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                        >
+                            <i class="fa-brands fa-linkedin-in fa-lg"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://x.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X (Twitter)"
+                            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+                        >
+                            <i class="fa-brands fa-x-twitter fa-lg"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
     <script type="module" src="js/script.js"></script>
