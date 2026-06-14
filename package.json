@@ -4,7 +4,8 @@
   "description": "finance control project of university",
   "main": "index.js",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/style.css"
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/style.css",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,10 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.3.0",
     "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "husky": "^9.1.7"
   }
 }

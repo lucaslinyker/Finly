@@ -1,0 +1,16 @@
+npm run build
+
+git diff --quiet dist/
+
+if [ $? -eq 1 ]; then
+  echo "A pasta 'dist/' possui alterações!"
+
+  read -p "Deseja continuar assim mesmo? (s/N): " resposta
+
+  if [[ ! "$resposta" =~ ^[sS]$ ]]; then
+    echo "Operação cancelada pelo usuário."
+    exit 1
+  fi
+fi
+
+echo "Continuando com a execução..."
